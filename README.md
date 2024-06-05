@@ -1,1 +1,3 @@
 # QBHfrontend
+
+npm run start
