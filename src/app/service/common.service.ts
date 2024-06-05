@@ -23,9 +23,7 @@ export class CommonService {
       errorMsg = "Field is required"
     }
     if (formGroup.controls[formControlName].hasError('pattern')) {
-      // const pattern = (formGroup.controls[formControlName].errors['pattern'].requiredPattern);
-      // const regexObject = this.regex.ALL_REGEXP.find(regExp => (String(regExp.REG_EXP) === String(pattern)))
-      // errorMsg = `Invalid - ${regexObject?.ERROR_MSG}`
+ 
       errorMsg = "Pattern is Invalid"
     }
     if (formGroup.controls[formControlName].hasError('email')) {
