@@ -1,0 +1,22 @@
+img{
+    // padding-top: 5px;
+    max-width: fit-content;
+    background-color: aquamarine;
+    height: 200px;
+    margin: auto;
+}
+
+.card{
+    background-color: transparent !important;
+}
+
+::ng-deep .my-class .modal-dialog { 
+    max-width: 60%;
+    width: 60%;
+}
+
+.modal-backdrop {
+    z-index: auto; /* Adjust to the desired z-index */
+    background-color: white;
+  }
+  

@@ -1,0 +1,42 @@
+
+
+<header>
+  <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+    <div class="position-sticky">
+      <div class="list-group list-group-flush mx-3 mt-4">
+        <a href="/dashboard" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
+          <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Dashboard</span>
+        </a>
+        <a class="list-group-item list-group-item-action py-2 ripple" (click)="logout()">
+          <i class="fas fa-chart-area fa-fw me-3"></i><span>Logout</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+        aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <a class="navbar-brand" href="/dashboard">
+        <img src="../../../assets/logo.png" height="25" alt="" loading="lazy" />
+      </a>
+
+      <ul class="navbar-nav ms-auto d-flex flex-row">
+
+        <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
+          <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown3" role="button"> <img
+              src="../../../assets/profile.png" class="rounded-circle" height="30" alt=""
+              loading="lazy" /> </a>
+          <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
+            <a ngbDropdownItem href="#" (click)="logout()" >Logout</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

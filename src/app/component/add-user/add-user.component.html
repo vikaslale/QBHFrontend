@@ -1,0 +1,43 @@
+<div class="modal-header">
+  <h4 class="modal-title">User Details</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form class="col-12 rounded shadow" [formGroup]="userForm">
+           <div class="mb-2">
+             <label for="name" class="form-label required">Name<span class="text-danger">*</span></label>
+             <input type="text" class="form-control" id="name" formControlName="name" 
+             [ngClass]="{'is-invalid': userForm.get('name').touched && userForm.get('name').invalid}">
+             <span *ngIf="userForm.get('name').touched" class="text-danger">{{getFormFieldError('userForm','name')}}</span>
+           </div>
+           <div class="mb-2">
+             <label for="email" class="form-label">Email address<span class="text-danger">*</span></label>
+             <input type="email" class="form-control" id="email" formControlName="email"
+             [ngClass]="{'is-invalid': userForm.get('email').touched && userForm.get('email').invalid}">
+             <span *ngIf="userForm.get('email').touched" class="text-danger">{{getFormFieldError('userForm','email')}}</span>
+           </div>
+           <div class="mb-2" >
+            <label for="mobile_number" class="form-label">Mobile Number<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="mobile_number" formControlName="mobile_number" maxlength="10"   [ngClass]="{'is-invalid': userForm.get('mobile_number').touched && userForm.get('mobile_number').invalid}">
+            <span *ngIf="userForm.get('mobile_number').touched " class="text-danger">{{getFormFieldError('userForm','mobile_number')}}</span>
+          </div>
+           <div class="mb-2">
+             <label for="address" class="form-label">address</label>
+             <textarea class="form-control" formControlName="address"
+             [ngClass]="{'is-invalid': userForm.get('address').touched && userForm.get('address').invalid}"></textarea>
+             <span *ngIf="userForm.get('address').touched" class="text-danger">{{getFormFieldError('userForm','address')}}</span>
+           </div>
+
+           
+    
+           <div>    
+           </div>
+    
+           <div class="text-center mt-3">
+             <button type="submit" class="btn btn-primary btn-rounded mb-4" [disabled]="!userForm.valid" (click)="adduser()">Submit</button>
+           </div>
+    
+         </form>
+</div>

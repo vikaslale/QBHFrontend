@@ -1,0 +1,53 @@
+<div class="card">
+  <div class="card-header text-right">
+    <h3 class="float-left">Users Listing</h3>
+    <button type="submit" class="btn btn-primary btn-rounded" (click)="openModel('add')"> Add User</button>
+    <button type="submit" class="btn btn-primary btn-rounded ml-2" (click)="download()">Download</button>
+    
+
+  </div>
+  <div class="card-body">
+    <div>
+      <div class="form-group form-inline">
+        Search: <input class="form-control ml-2" type="text"
+        placeholder="Search narration.."  [(ngModel)]="searchTerm"
+          (keyup)="getUserList()" />
+      </div>
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th scope="col" sortable="name">Name</th>
+              <th scope="col" sortable="area">Email</th>
+              <th scope="col" sortable="population">mobile_number</th>
+              <th scope="col">Address</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of userList">
+              <td>  {{user.name}}</td>
+              <td> {{user.email}}</td>
+              <td> {{user.mobile_number}}</td>
+              <td>{{user.address}}</td>
+              <td>
+                <button type="submit" class="btn btn-danger btn-rounded mb-1" (click)="deleteRecord(user)"><i
+                    class="bi bi-google"></i>Delete</button>
+                <button type="submit" class="btn btn-danger btn-rounded ml-1 mb-1" (click)="openModel('edit',user)"><i
+                    class="bi bi-google"></i>Edit</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="p-2 text-right">
+        <ngb-pagination [collectionSize]="totalRecord" [(page)]="page" [pageSize]="pageSize"
+          aria-label="Default pagination" class="float-right" (pageChange)="onPageChange($event)"></ngb-pagination>
+
+      </div>
+
+    </div>
+
+
+  </div>
